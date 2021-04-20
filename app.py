@@ -22,7 +22,7 @@ import streamlit.components.v1 as components
 #app=Flask(__name__)
 #Swagger(app)
 
-pickle_in = open("/Users/yiranliu/Desktop/HW3/classifier.pkl","rb")
+pickle_in = open("classifier.pkl","rb")
 classifier=pickle.load(pickle_in)
 
 
@@ -35,7 +35,7 @@ def welcome():
 
 
 def predict_note_authentication(test):
-    mydf=pd.read_csv("/Users/yiranliu/Desktop/HW3//Hotel_reviews.csv")
+    mydf=pd.read_csv("Hotel_reviews.csv")
     X_data=mydf['Review']
     y_labels=mydf['Authenticity']
     X_data_train,X_data_test,y_labels_train,y_labels_test=train_test_split(X_data,y_labels,test_size=0.2,random_state=1)
@@ -52,7 +52,7 @@ def predict_note_authentication(test):
 
 
 def lime(review):
-    mydf=pd.read_csv("/Users/yiranliu/Desktop/HW3//Hotel_reviews.csv")
+    mydf=pd.read_csv("Hotel_reviews.csv")
     X_data=mydf['Review']
     y_labels=mydf['Authenticity']
     X_data_train,X_data_test,y_labels_train,y_labels_test=train_test_split(X_data,y_labels,test_size=0.2,random_state=1)
